@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\ovidiu\source\repos\opengl\opengl\main.cpp(177): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  OpenGL.vcxproj -> C:\Users\Ovidiu\source\repos\OpenGL\Debug\OpenGL.exe
