@@ -1,4 +1,7 @@
 Setup OpenGL --> https://www.youtube.com/watch?v=8p76pJsUP44
+Source --> https://www.youtube.com/watch?v=jOVdMTl4mII
+
+![alt text](http://url/to/img.png)
 ```cpp
 #include <GL\freeglut.h>
 #include <cmath>
