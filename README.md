@@ -4,8 +4,8 @@ Setup OpenGL ---> https://www.youtube.com/watch?v=8p76pJsUP44
 
 
 
-Code:
 
+"
 #include <GL\freeglut.h>
 #include <cmath>
 #include <stdlib.h>
@@ -23,7 +23,7 @@ class Camera {
 	double dTheta; // increment the theta for svinging the camera around
 	double dy; // increment in y for moving the camera up/down
 
-public:
+	public:
 	Camera():  theta(0), y(3), dTheta(0.04), dy(0.2) {}
 	double getX() {
 		return 10 * cos(theta);
@@ -50,7 +50,7 @@ class Ball {
 	double z;
 	int direction;
 
-public:
+	public:
 	Ball(double r, GLfloat* c, double h, double x, double z):
 		radius(r), color(c), maximumHeight(h), direction(-1), y(h), x(x), z(z) {}
 
@@ -77,34 +77,33 @@ class Checkerboard {
 	int displayListId;
 	int width;
 	int depth;
-public:
-	Checkerboard(int width, int depth) : width(width), depth(depth) {}
-	double centerx() { return width / 2; }
-	double centerz() { return depth / 2; }
-	void create() {
-		displayListId = glGenLists(1);
-		glNewList(displayListId, GL_COMPILE);
-		GLfloat lightPosition[] = { 4, 3, 7, 1 };
-		glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
-		glBegin(GL_QUADS);
-		glNormal3d(0, 1, 0);
-		for (int x = 0; x < width - 1; x++) {
-			for (int z = 0; z < depth - 1; z++) {
-				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE,
-					(x + z) % 2 == 0 ? RED : WHITE);
-				glVertex3d(x, 0, z);
-				glVertex3d(x + 1, 0, z);
-				glVertex3d(x + 1, 0, z + 1);
-				glVertex3d(x, 0, z + 1);
+	public:
+		Checkerboard(int width, int depth) : width(width), depth(depth) {}
+		double centerx() { return width / 2; }
+		double centerz() { return depth / 2; }
+		void create() {
+			displayListId = glGenLists(1);
+			glNewList(displayListId, GL_COMPILE);
+			GLfloat lightPosition[] = { 4, 3, 7, 1 };
+			glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+			glBegin(GL_QUADS);
+			glNormal3d(0, 1, 0);
+			for (int x = 0; x < width - 1; x++) {
+				for (int z = 0; z < depth - 1; z++) {
+					glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE,(x + z) % 2 == 0 ? RED : WHITE);
+					glVertex3d(x, 0, z);
+					glVertex3d(x + 1, 0, z);
+					glVertex3d(x + 1, 0, z + 1);
+					glVertex3d(x, 0, z + 1);
+				}
 			}
+			glEnd();
+			glEndList();
 		}
-		glEnd();
-		glEndList();
-	}
-	void draw()
-	{
-		glCallList(displayListId);
-	}
+		void draw()
+		{
+			glCallList(displayListId);
+		}
 };
 
 // Global variables: a camera, a checkboard and some balls
@@ -197,3 +196,4 @@ void main(int argc, char** argv) {
 	glutMainLoop();
 
 }
+"
