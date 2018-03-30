@@ -1,7 +1,6 @@
 Setup OpenGL --> https://www.youtube.com/watch?v=8p76pJsUP44<br>
 Source --> https://www.youtube.com/watch?v=jOVdMTl4mII
 
-//![alt text](https://github.com/Ovidiu-Petrisor-Nicolae/3d-bouncing-balls-OpenGL/img/img.png|alt=octocat)
 
 ```cpp
 #include <GL\freeglut.h>
