@@ -1,3 +1,4 @@
+code:
 #include <GL\freeglut.h>
 #include <cmath>
 #include <stdlib.h>
