@@ -1,3 +1,4 @@
+Setup OpenGL --> https://www.youtube.com/watch?v=8p76pJsUP44
 ```cpp
 #include <GL\freeglut.h>
 #include <cmath>
